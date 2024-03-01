@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "INTGameJam.sln"
+    "dotnet.defaultSolution": "INT-Game-Jam2024.sln"
 }
