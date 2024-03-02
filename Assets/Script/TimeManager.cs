@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -55,16 +56,28 @@ public class TimeManager : MonoBehaviour
         MainGameCanvas.SetActive(true);
     }
 
-    #region On Time Clicked
+    #region On Tachyon Clicked
         
-    public void OnTimeClicked()
+    public void OnTachyonClicked()
     {
         IncreaseTime();
+
+        _TachyonObj.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(TachyonScaleBack);
+        _backgroundObj.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(BackgroudScaleBack);
     }
 
+    private void TachyonScaleBack()
+    {
+        _TachyonObj.transform.DOBlendableScaleBy(new Vector3(-0.05f, -0.05f, -0.05f), 0.05f);
+
+    }
+    private void BackgroudScaleBack()
+    {
+        _backgroundObj.transform.DOBlendableScaleBy(new Vector3(-0.05f, -0.05f, -0.05f), 0.05f);
+    }
     public void IncreaseTime()
     {
-        CurrentTimeCount += 1 + CurrentTimeCount;
+        CurrentTimeCount = 1 + CurrentTimeCount;
         UpdateTimeUI();
     }
     #endregion
