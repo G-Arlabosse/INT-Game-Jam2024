@@ -106,7 +106,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount = (1+ (TimePerClickUpgrade) + CurrentTimeCount)*TimeMultipler;
+        CurrentTimeCount += (1+ TimePerClickUpgrade)*TimeMultipler;
         UpdateTimeUI();
     }
     #endregion
@@ -131,7 +131,7 @@ public class TimeManager : MonoBehaviour
 
     public void SimpleTimeIncrease(double amount)
     {
-        CurrentTimeCount += amount;
+        CurrentTimeCount += amount*TimeMultipler;
         UpdateTimeUI();
     }
 
