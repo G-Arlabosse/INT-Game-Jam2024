@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374021bcf9cb308409dfef6042f66bac, type: 3}
-  m_Name: Time Per Seoncds 2
+  m_Script: {fileID: 11500000, guid: e93cd0ffe02ad34459326ed47cb5d7dc, type: 3}
+  m_Name: Time Per Click 6
   m_EditorClassIdentifier: 
-  UpgradeAmount: 500
-  OriginalUpgradeCost: 85000
-  CurrentUpgradeCost: 85000
+  UpgradeAmount: 100000
+  OriginalUpgradeCost: 7777777777
+  CurrentUpgradeCost: 7777777777
   CostIncreaseMultiplierPerPurchase: 0.08
-  UpgradeButtonText: 500 TPS
-  UpgradeButtonDescription: Increase your Time Per Second by {0}
+  UpgradeButtonText: 100,000 TPC
+  UpgradeButtonDescription: Increase your time per click by {0}
   UpgradeImage: {fileID: 0}
-  UpgradeID: 3
+  UpgradeID: 0

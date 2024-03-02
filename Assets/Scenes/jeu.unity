@@ -845,9 +845,17 @@ MonoBehaviour:
   _backgroundObj: {fileID: 1397562655}
   TimeUpgrades:
   - {fileID: 11400000, guid: efd36084511225a4b8677962ee9ca2d4, type: 2}
+  - {fileID: 11400000, guid: df8f0848b389dda429ae3c283a4fca81, type: 2}
   - {fileID: 11400000, guid: a7d766d770fa1db448649748fc6340ba, type: 2}
   - {fileID: 11400000, guid: b039ffaddf698d749af1b76fda276fa8, type: 2}
+  - {fileID: 11400000, guid: 41b261ade7f31ac4388fdfbd80cb23c9, type: 2}
   - {fileID: 11400000, guid: e4ea6ad8ee70b1f46ba95a995e2e08ef, type: 2}
+  - {fileID: 11400000, guid: 668ae8f8e7dfba548b79834fdbbca8c2, type: 2}
+  - {fileID: 11400000, guid: a9394599cd0e9294cb379638876417b6, type: 2}
+  - {fileID: 11400000, guid: d5f87fba2723c664b999a2c482305cba, type: 2}
+  - {fileID: 11400000, guid: 4ea91b4cc5a4dde42aa6b5c4066543db, type: 2}
+  - {fileID: 11400000, guid: d417109e1be318443802ca1df37da8f6, type: 2}
+  - {fileID: 11400000, guid: 4b356aef8a2d87240bea53fa8c26d326, type: 2}
   _upgradeUIToSpawn: {fileID: 2443957545288107131, guid: 613ebea28eb8d7248b0b803672ae783f, type: 3}
   _upgradeUIParent: {fileID: 1144924980}
   TimePerSecondObjToSpawn: {fileID: 1137064607}
@@ -1901,8 +1909,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218, y: 26}
-  m_SizeDelta: {x: 1088, y: 870}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397562657
 MonoBehaviour:
@@ -1924,7 +1932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9903d6f53ab48a74aad5f7ed4baae86b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dbdf796ffc142640af41100cec97b1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
