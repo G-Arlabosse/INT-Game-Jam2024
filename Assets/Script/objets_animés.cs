@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UI; 
 
@@ -53,6 +52,11 @@ public class objets_animés : MonoBehaviour
         {
             TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 15;
             TimeManager.instance.TimeMultipler *= 1.02;
+        }
+        if (i % 11 == 0 && sprites.Length == 11)
+        {
+            TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 15;
+            TimeManager.instance.TimeMultipler *= 1.05;
         }
     }
 
