@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Time Per Seoncds 1
   m_EditorClassIdentifier: 
   UpgradeAmount: 10
-  OriginalUpgradeCost: 10
-  CurrentUpgradeCost: 10
+  OriginalUpgradeCost: 30000
+  CurrentUpgradeCost: 30000
   CostIncreaseMultiplierPerPurchase: 0.08
   UpgradeButtonText: 10 TPS
   UpgradeButtonDescription: Increase your Time Per Second by {0}
+  UpgradeImage: {fileID: 0}
+  UpgradeID: 2
