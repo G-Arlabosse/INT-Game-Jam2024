@@ -23,6 +23,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Transform _upgradeUIParent;
     public GameObject TimePerSecondObjToSpawn;
 
+    [Space]
+    [SerializeField] private GameObject _Clickable2;
 
     public double CurrentTimeCount { get; set; }
 
@@ -46,6 +48,7 @@ public class TimeManager : MonoBehaviour
 
         _upgradeCanvas.SetActive(false);
         MainGameCanvas.SetActive(true);
+        _Clickable2.SetActive(false);
 
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
@@ -137,6 +140,19 @@ public class TimeManager : MonoBehaviour
             upgrade.CurrentUpgradeCost = Mathf.Round((float)(upgrade.CurrentUpgradeCost * (1 + upgrade.CostIncreaseMultiplierPerPurchase)));
 
             buttonRef.UpgradeCostText.text = "Cost: " + upgrade.CurrentUpgradeCost;
+        }
+    }
+
+    #endregion
+
+    #region Nouvel Objet
+
+    public void Apparition(int ID)
+    {
+        if(ID == 1)
+        {
+            _Clickable2.SetActive(true);
+            Debug.Log(ID);
         }
     }
 

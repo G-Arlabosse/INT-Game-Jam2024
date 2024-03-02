@@ -23,6 +23,7 @@ public class InitialazeUpgrades : MonoBehaviour
             buttonRef.UpgradeCostText.text = "Cost :" + upgrades[currentIndex].CurrentUpgradeCost;
             buttonRef.UpgradeImage.sprite = upgrades[currentIndex].UpgradeImage;
             
+            
 
             //set onClick
             buttonRef.UpgradeButton.onClick.AddListener(delegate { TimeManager.instance.OnUpgradeButtonClick(upgrades[currentIndex], buttonRef); });
