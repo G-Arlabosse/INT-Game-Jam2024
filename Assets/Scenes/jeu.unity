@@ -792,6 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537929996}
+  - component: {fileID: 537929997}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -814,6 +815,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &537929997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537929995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47b4a01acff16c4bb7304a4ed4d6c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainGameCanvas: {fileID: 243842003}
+  _upgradeCanvas: {fileID: 926934984}
+  _TimeCountText: {fileID: 172832497}
+  _TimeCountperSECText: {fileID: 1107593410}
+  _TachyonObj: {fileID: 1523708645}
+  TachyonTextPopup: {fileID: 0}
+  _backgroundObj: {fileID: 1397562655}
+  _upgradeUIToSpawn: {fileID: 0}
+  _upgradeUIParent: {fileID: 0}
+  TimePerSecondObjToSpawn: {fileID: 0}
 --- !u!1 &715855524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1895,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1896,7 +1919,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523708647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 537929997}
+        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
+        m_MethodName: OnTachyonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1864066412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2156,15 +2191,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 475
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2196,11 +2231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 237.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1450774526224999377, guid: ab3f755037b723b4a99368eba5928438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
