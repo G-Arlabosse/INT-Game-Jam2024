@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 374021bcf9cb308409dfef6042f66bac, type: 3}
-  m_Name: Time Per Seoncds 2
+  m_Name: Time Per Seoncds 5
   m_EditorClassIdentifier: 
-  UpgradeAmount: 500
-  OriginalUpgradeCost: 85000
-  CurrentUpgradeCost: 85000
+  UpgradeAmount: 1000000
+  OriginalUpgradeCost: 999999999999
+  CurrentUpgradeCost: 999999999999
   CostIncreaseMultiplierPerPurchase: 0.08
-  UpgradeButtonText: 500 TPS
+  UpgradeButtonText: 1,000,000 TPS
   UpgradeButtonDescription: Increase your Time Per Second by {0}
   UpgradeImage: {fileID: 0}
-  UpgradeID: 3
+  UpgradeID: 6
