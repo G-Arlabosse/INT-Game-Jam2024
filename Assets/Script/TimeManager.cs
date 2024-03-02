@@ -86,7 +86,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount = 1 + CurrentTimeCount;
+        CurrentTimeCount = 1+ (1*TimePerClickUpgrade) + CurrentTimeCount;
         UpdateTimeUI();
     }
     #endregion
