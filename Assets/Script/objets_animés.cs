@@ -40,22 +40,22 @@ public class objets_animés : MonoBehaviour
         print(i);
         if (i % 6 == 0 && sprites.Length == 6)
         {
-            TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 2;
+            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 2;
             TimeManager.instance.TimeMultipler *= 1.005;
         }
         if (i % 18 == 0 && sprites.Length == 18)
         {
-            TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 6;
+            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 6;
             TimeManager.instance.TimeMultipler *= 1.01;
         }
         if (i % 35 == 0 && sprites.Length == 35)
         {
-            TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 15;
+            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
             TimeManager.instance.TimeMultipler *= 1.02;
         }
         if (i % 11 == 0 && sprites.Length == 11)
         {
-            TimeManager.instance.CurrentTimeCount = TimeManager.instance.CurrentTimePerSecond * 15;
+            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
             TimeManager.instance.TimeMultipler *= 1.05;
         }
     }
