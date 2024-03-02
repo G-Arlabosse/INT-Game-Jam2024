@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &243842004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ RectTransform:
   m_Father: {fileID: 1367861075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -845,6 +845,8 @@ MonoBehaviour:
   TimeUpgrades:
   - {fileID: 11400000, guid: efd36084511225a4b8677962ee9ca2d4, type: 2}
   - {fileID: 11400000, guid: a7d766d770fa1db448649748fc6340ba, type: 2}
+  - {fileID: 11400000, guid: b039ffaddf698d749af1b76fda276fa8, type: 2}
+  - {fileID: 11400000, guid: e4ea6ad8ee70b1f46ba95a995e2e08ef, type: 2}
   _upgradeUIToSpawn: {fileID: 2443957545288107131, guid: 613ebea28eb8d7248b0b803672ae783f, type: 3}
   _upgradeUIParent: {fileID: 1144924980}
   TimePerSecondObjToSpawn: {fileID: 1137064607}
@@ -1152,7 +1154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &926934985
 RectTransform:
   m_ObjectHideFlags: 0
