@@ -10,4 +10,5 @@ public class UpgradeButtonReferences : MonoBehaviour
     public TextMeshProUGUI UpgradeButtonText;
     public TextMeshProUGUI UpgradeButtonDescription;
     public TextMeshProUGUI UpgradeCostText;
+    public Image UpgradeImage;
 }

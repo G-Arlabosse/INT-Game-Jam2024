@@ -18,3 +18,4 @@ MonoBehaviour:
   CostIncreaseMultiplierPerPurchase: 0.08
   UpgradeButtonText: 10 TPC
   UpgradeButtonDescription: Increase your time per click by {0}
+  UpgradeImage: {fileID: 21300000, guid: 0fb47fb6895832b499ed868f5130e8e6, type: 3}
