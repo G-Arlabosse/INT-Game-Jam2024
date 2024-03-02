@@ -277,6 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450774526224999377}
+  - component: {fileID: 1486101364216585668}
   m_Layer: 5
   m_Name: UPGRADES
   m_TagString: Untagged
@@ -305,6 +306,22 @@ RectTransform:
   m_AnchoredPosition: {x: 237.5, y: -100}
   m_SizeDelta: {x: 475, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1486101364216585668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405698537888785135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77fb22cab2e2bde4093950ce24cc7c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeButton: {fileID: 6384508185699613511}
+  UpgradeButtonText: {fileID: 1472951311879804281}
+  UpgradeButtonDescription: {fileID: 6927513432720272471}
+  UpgradeCostText: {fileID: 6191510327432722119}
 --- !u!1 &5767439761991826908
 GameObject:
   m_ObjectHideFlags: 0

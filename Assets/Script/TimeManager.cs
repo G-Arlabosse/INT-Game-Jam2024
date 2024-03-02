@@ -82,4 +82,36 @@ public class TimeManager : MonoBehaviour
     }
     #endregion
 
+    #region Button Presses
+
+    public void OnUpgradeButtonPress()
+    {
+        MainGameCanvas.SetActive(false);
+        _upgradeCanvas.SetActive(true);
+    }
+
+    public void OnResumeButtonPress()
+    {
+        _upgradeCanvas.SetActive(false);
+        MainGameCanvas.SetActive(true);
+    }
+
+    #endregion
+
+    #region Simple Increase
+
+    public void SimpleTimeIncrease(double amount)
+    {
+        CurrentTimeCount += amount;
+        UpdateTimeUI();
+    }
+
+    public void SimpleCookiePerSecondIncrease(double amount)
+    {
+        CurrentTimePerSecond += amount;
+        UpdateTimePerSecondUI();
+    }
+
+    #endregion
+
 }
