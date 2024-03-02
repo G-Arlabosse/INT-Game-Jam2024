@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Time Per Click 1
   m_EditorClassIdentifier: 
   UpgradeAmount: 1
-  OriginalUpgradeCost: 100
-  CurrentUpgradeCost: 100
+  OriginalUpgradeCost: 10
+  CurrentUpgradeCost: 10
   CostIncreaseMultiplierPerPurchase: 0.08
   UpgradeButtonText: 1 TPC
   UpgradeButtonDescription: Increase your time per click by {0}
+  UpgradeImage: {fileID: 21300000, guid: bb7302d6550600d4eb06e47300242b37, type: 3}

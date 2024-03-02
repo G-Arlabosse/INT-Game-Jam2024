@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class TimeManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject _backgroundObj;
 
     [Space]
+    public TimeUpgrade[] TimeUpgrades;
     [SerializeField] private GameObject _upgradeUIToSpawn;
     [SerializeField] private Transform _upgradeUIParent;
     public GameObject TimePerSecondObjToSpawn;
@@ -30,6 +32,25 @@ public class TimeManager : MonoBehaviour
 
     public double TimePerClickUpgrade { get; set; }
 
+    private InitialazeUpgrades _initializeUpgrade;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        UpdateTimeUI();
+        UpdateTimePerSecondUI();
+
+        _upgradeCanvas.SetActive(false);
+        MainGameCanvas.SetActive(true);
+
+        _initializeUpgrade = GetComponent<InitialazeUpgrades>();
+        _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
+    }
+
     #region UI Updates
 
     private void UpdateTimeUI()
@@ -41,23 +62,11 @@ public class TimeManager : MonoBehaviour
     {
         _TimeCountperSECText.text = CurrentTimePerSecond.ToString() + " P/S";
     }
+   
     #endregion
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-
-        UpdateTimeUI();
-        UpdateTimePerSecondUI();
-
-        _upgradeCanvas.SetActive(false);
-        MainGameCanvas.SetActive(true);
-    }
 
     #region On Tachyon Clicked
-        
+
     public void OnTachyonClicked()
     {
         IncreaseTime();
@@ -77,7 +86,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount = 1 + CurrentTimeCount;
+        CurrentTimeCount = 1+ (1*TimePerClickUpgrade) + CurrentTimeCount;
         UpdateTimeUI();
     }
     #endregion
@@ -114,4 +123,22 @@ public class TimeManager : MonoBehaviour
 
     #endregion
 
+    #region Events
+
+    public void OnUpgradeButtonClick(TimeUpgrade upgrade, UpgradeButtonReferences buttonRef)
+    {
+        if (CurrentTimeCount >= upgrade.CurrentUpgradeCost)
+        {
+            upgrade.ApplyUpgrade();
+
+            CurrentTimeCount -= upgrade.CurrentUpgradeCost;
+            UpdateTimeUI();
+
+            upgrade.CurrentUpgradeCost = Mathf.Round((float)(upgrade.CurrentUpgradeCost * (1 + upgrade.CostIncreaseMultiplierPerPurchase)));
+
+            buttonRef.UpgradeCostText.text = "Cost: " + upgrade.CurrentUpgradeCost;
+        }
+    }
+
+    #endregion
 }

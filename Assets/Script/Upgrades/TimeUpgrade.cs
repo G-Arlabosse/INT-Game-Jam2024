@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class TimeUpgrade : ScriptableObject
 {
@@ -13,7 +14,7 @@ public abstract class TimeUpgrade : ScriptableObject
     public string UpgradeButtonText;
     [TextArea(3, 10)]
     public string UpgradeButtonDescription;
-
+    public Sprite UpgradeImage;
     public abstract void ApplyUpgrade();
 
 
