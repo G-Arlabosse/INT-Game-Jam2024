@@ -15,6 +15,7 @@ public abstract class TimeUpgrade : ScriptableObject
     [TextArea(3, 10)]
     public string UpgradeButtonDescription;
     public Sprite UpgradeImage;
+    public int UpgradeID;
     public abstract void ApplyUpgrade();
 
 

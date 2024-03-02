@@ -19,3 +19,4 @@ MonoBehaviour:
   UpgradeButtonText: 1 TPC
   UpgradeButtonDescription: Increase your time per click by {0}
   UpgradeImage: {fileID: 21300000, guid: bb7302d6550600d4eb06e47300242b37, type: 3}
+  UpgradeID: 1
