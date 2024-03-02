@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject _upgradeCanvas;
     [SerializeField] private TextMeshProUGUI _TimeCountText;
     [SerializeField] private TextMeshProUGUI _TimeCountperSECText;
+    [SerializeField] private TextMeshProUGUI _TimeMultiplierTXT;
     [SerializeField] private GameObject _TachyonObj;
     public GameObject TachyonTextPopup;
     [SerializeField] private GameObject _backgroundObj;
@@ -35,6 +37,8 @@ public class TimeManager : MonoBehaviour
 
     public double CurrentTimePerSecond { get; set; }
 
+    public double TimeMultipler { get; set; }
+
     //upgrades
 
     public double TimePerClickUpgrade { get; set; }
@@ -46,10 +50,12 @@ public class TimeManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            TimeMultipler = 1;
         }
 
         UpdateTimeUI();
         UpdateTimePerSecondUI();
+        UpdateTimeMultiplierUI();
 
         _upgradeCanvas.SetActive(false);
         MainGameCanvas.SetActive(true);
@@ -63,12 +69,18 @@ public class TimeManager : MonoBehaviour
 
     private void UpdateTimeUI()
     {
-        _TimeCountText.text = CurrentTimeCount.ToString();
+        _TimeCountText.text = Math.Round(CurrentTimeCount).ToString() +" Tachyons";
+        UpdateTimeMultiplierUI();
     }
 
     private void UpdateTimePerSecondUI()
     {
-        _TimeCountperSECText.text = CurrentTimePerSecond.ToString() + " P/S";
+        _TimeCountperSECText.text = Math.Round(CurrentTimePerSecond, 1).ToString() + " Tachyons/s";
+    }
+
+    private void UpdateTimeMultiplierUI()
+    {
+        _TimeMultiplierTXT.text = "Multplicateur : " + Math.Round(TimeMultipler, 3).ToString();
     }
    
     #endregion
@@ -94,7 +106,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount = 1+ (1*TimePerClickUpgrade) + CurrentTimeCount;
+        CurrentTimeCount = (1+ (TimePerClickUpgrade) + CurrentTimeCount)*TimeMultipler;
         UpdateTimeUI();
     }
     #endregion
@@ -125,7 +137,7 @@ public class TimeManager : MonoBehaviour
 
     public void SimpleCookiePerSecondIncrease(double amount)
     {
-        CurrentTimePerSecond += amount;
+        CurrentTimePerSecond += amount * TimeMultipler;
         UpdateTimePerSecondUI();
     }
 
@@ -158,11 +170,11 @@ public class TimeManager : MonoBehaviour
         {
             _Clickable2.SetActive(true);
         }
-        if (ID == 2)
+        if (ID == 1)
         {
             _Clickable3.SetActive(true);
         }
-        if(ID == 3)
+        if(ID == 1)
         {
             _Clickable4.SetActive(true);
         }
@@ -170,11 +182,11 @@ public class TimeManager : MonoBehaviour
         {
             _Clickable5.SetActive(true);
         }
-        if(ID == 5)
+        if(ID == 1)
         {
             _Clickable6.SetActive(true);
         }
-        if (ID == 6)
+        if (ID == 1)
         {
             _Clickable7.SetActive(true);
         }

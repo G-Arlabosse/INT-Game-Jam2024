@@ -15,7 +15,7 @@ MonoBehaviour:
   UpgradeAmount: 1000000
   OriginalUpgradeCost: 999999999999
   CurrentUpgradeCost: 999999999999
-  CostIncreaseMultiplierPerPurchase: 0.08
+  CostIncreaseMultiplierPerPurchase: 0.13
   UpgradeButtonText: 1,000,000 TPS
   UpgradeButtonDescription: Increase your Time Per Second by {0}
   UpgradeImage: {fileID: 0}

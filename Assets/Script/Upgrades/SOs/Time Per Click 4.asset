@@ -15,6 +15,8 @@ MonoBehaviour:
   UpgradeAmount: 2500
   OriginalUpgradeCost: 150000
   CurrentUpgradeCost: 150000
-  CostIncreaseMultiplierPerPurchase: 0.08
+  CostIncreaseMultiplierPerPurchase: 0.2
   UpgradeButtonText: 2,500 TPC
   UpgradeButtonDescription: Increase your time per click by {0}
+  UpgradeImage: {fileID: 0}
+  UpgradeID: 0
