@@ -25,6 +25,11 @@ public class TimeManager : MonoBehaviour
 
     [Space]
     [SerializeField] private GameObject _Clickable2;
+    [SerializeField] private GameObject _Clickable3;
+    [SerializeField] private GameObject _Clickable4;
+    [SerializeField] private GameObject _Clickable5;
+    [SerializeField] private GameObject _Clickable6;
+    [SerializeField] private GameObject _Clickable7;
 
     public double CurrentTimeCount { get; set; }
 
@@ -152,7 +157,26 @@ public class TimeManager : MonoBehaviour
         if(ID == 1)
         {
             _Clickable2.SetActive(true);
-            Debug.Log(ID);
+        }
+        if (ID == 2)
+        {
+            _Clickable3.SetActive(true);
+        }
+        if(ID == 3)
+        {
+            _Clickable4.SetActive(true);
+        }
+        if(ID == 1)
+        {
+            _Clickable5.SetActive(true);
+        }
+        if(ID == 5)
+        {
+            _Clickable6.SetActive(true);
+        }
+        if (ID == 6)
+        {
+            _Clickable7.SetActive(true);
         }
     }
 
