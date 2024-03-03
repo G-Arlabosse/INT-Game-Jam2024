@@ -44,6 +44,9 @@ public class TimeManager : MonoBehaviour
 
     public double TimeMultipler { get; set; }
 
+    [SerializeField] GameObject audiomanager;
+    private AudioManager audioman;
+
     //upgrades
 
     public double TimePerClickUpgrade { get; set; }
@@ -81,6 +84,7 @@ public class TimeManager : MonoBehaviour
 
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
+        audioman = audiomanager.GetComponent<AudioManager>();
     }
 
     #region UI Updates
@@ -108,6 +112,7 @@ public class TimeManager : MonoBehaviour
 
     public void OnTachyonClicked()
     {
+        audioman.PlaySound(2);
         IncreaseTime();
 
         _TachyonObj.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(TachyonScaleBack);
@@ -134,12 +139,14 @@ public class TimeManager : MonoBehaviour
 
     public void OnUpgradeButtonPress()
     {
+        audioman.PlaySound(1);
         MainGameCanvas.SetActive(false);
         _upgradeCanvas.SetActive(true);
     }
 
     public void OnResumeButtonPress()
     {
+        audioman.PlaySound(1);
         _upgradeCanvas.SetActive(false);
         MainGameCanvas.SetActive(true);
     }
@@ -166,6 +173,7 @@ public class TimeManager : MonoBehaviour
 
     public void OnUpgradeButtonClick(TimeUpgrade upgrade, UpgradeButtonReferences buttonRef)
     {
+        audioman.PlaySound(1);
         if (CurrentTimeCount >= upgrade.CurrentUpgradeCost)
         {
             upgrade.ApplyUpgrade();
