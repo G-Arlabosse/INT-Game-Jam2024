@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -251,12 +252,8 @@ public class TimeManager : MonoBehaviour
         TimePerClickUpgrade = 0;
         TimeMultipler = 1;
 
-        //reset upgrades price
-        _initializeUpgrade = GetComponent<InitialazeUpgrades>();
-        for (int i = 0; i < TimeUpgrades.Length; i++)
-        {
-            TimeUpgrades[i].CurrentUpgradeCost = TimeUpgrades[i].OriginalUpgradeCost;
-        }
+
+
 
         // Initialize upgrades again
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
