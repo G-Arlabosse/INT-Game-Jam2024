@@ -17,6 +17,7 @@ MonoBehaviour:
   CurrentUpgradeCost: 5000000
   CostIncreaseMultiplierPerPurchase: 0.13
   UpgradeButtonText: 10,000 TPS
-  UpgradeButtonDescription: Increase your Time Per Second by {0}
-  UpgradeImage: {fileID: 0}
+  UpgradeButtonDescription: Increase your Tachyons Per Second by {0} and unlock the
+    clickable Chronometer
+  UpgradeImage: {fileID: 21300000, guid: 622423c85a3ccc146aec2fd9d31bfc3b, type: 3}
   UpgradeID: 5

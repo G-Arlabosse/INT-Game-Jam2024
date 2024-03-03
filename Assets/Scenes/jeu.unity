@@ -1229,6 +1229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horloge
       objectReference: {fileID: 0}
+    - target: {fileID: 7479686881833906620, guid: bdaf9fc599ca9f340970b53128b654a5, type: 3}
+      propertyPath: audiomanager
+      value: 
+      objectReference: {fileID: 277231065}
     - target: {fileID: 8636654475774881378, guid: bdaf9fc599ca9f340970b53128b654a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1960,8 +1964,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 303}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: 0, y: 250}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528074611
 MonoBehaviour:
@@ -2032,15 +2036,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.97987914, b: 1, a: 0.5882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a5d160ead42def24788d4cde28cdee21, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2327,6 +2331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 101282184}
     m_Modifications:
+    - target: {fileID: 258723635626222213, guid: d4f64209e8ae8b942bf501f473ab5c69, type: 3}
+      propertyPath: audiomanager
+      value: 
+      objectReference: {fileID: 277231065}
     - target: {fileID: 921930243569154576, guid: d4f64209e8ae8b942bf501f473ab5c69, type: 3}
       propertyPath: m_Name
       value: Chronometre
@@ -2721,7 +2729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715855524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -3711,7 +3719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943126425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -4721,7 +4729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3dbdf796ffc142640af41100cec97b1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67259bb8ed82b79448818cd90993a0c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5971,7 +5979,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f2f3f4ce5b400549bb3a939eb361f68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa33fe0c23543a4a818bdf9a0c17555, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

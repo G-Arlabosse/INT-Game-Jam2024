@@ -11,10 +11,15 @@ public class rotationTrotteuse : MonoBehaviour
     private float timer = 0f;
     private bool isFunctionActive = true;
 
+    [SerializeField] GameObject audiomanager;
+    private AudioManager audioman;
+
     public void ClickChrono()
     {
+        audioman = audiomanager.GetComponent<AudioManager>();
         trotteuse.rectTransform.Rotate(Vector3.forward, -6f);
-        if(isFunctionActive == true)
+        audioman.PlaySound(7);
+        if (isFunctionActive == true)
         {
             clickCount += 1;
         }
@@ -32,6 +37,7 @@ public class rotationTrotteuse : MonoBehaviour
             {
                 if(clickCount > 500)
                 {
+                    audioman.PlaySound(8);
                     TimeManager.instance.CurrentTimeCount = clickCount*TimeManager.instance.CurrentTimePerSecond/10;
                     TimeManager.instance.TimeMultipler += 0.1;
                     isFunctionActive = false;

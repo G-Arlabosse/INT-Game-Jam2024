@@ -17,6 +17,7 @@ MonoBehaviour:
   CurrentUpgradeCost: 100
   CostIncreaseMultiplierPerPurchase: 0.13
   UpgradeButtonText: 1 TPS
-  UpgradeButtonDescription: Increase your Time Per Second by {0}
-  UpgradeImage: {fileID: 21300000, guid: 7f6f5ce069b157442a9db5ebf7bbcefe, type: 3}
+  UpgradeButtonDescription: Increase your Tachyons Per Second by {0} and unlock the
+    clickable Sundial
+  UpgradeImage: {fileID: 21300000, guid: 0fb47fb6895832b499ed868f5130e8e6, type: 3}
   UpgradeID: 1
