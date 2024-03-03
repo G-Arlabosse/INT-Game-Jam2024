@@ -35,9 +35,6 @@ public class objets_animés : MonoBehaviour
     {
         i = (i + 1) % sprites.Length;
         sp.sprite = sprites[i];
-        print(sp.sprite);
-        print(sprites[i]);
-        print(i);
         if (i % 6 == 0 && sprites.Length == 6)
         {
             TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 2;
