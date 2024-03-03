@@ -57,7 +57,7 @@ public class TimeManager : MonoBehaviour
     public float TimerDuration = 1f;
     private double _counter;
 
-    private double rebirthMultiplier;
+    private double singularities;
     private double rebirthBuffer;
     private double rebirthTimeBefore;
 
@@ -160,7 +160,7 @@ public class TimeManager : MonoBehaviour
 
     public void SimpleTimeIncrease(double amount)
     {
-        CurrentTimeCount += amount*TimeMultipler*(1+rebirthMultiplier*2);
+        CurrentTimeCount += amount*TimeMultipler;
         UpdateTimeUI();
     }
 
@@ -200,23 +200,23 @@ public class TimeManager : MonoBehaviour
         {
             _Clickable2.SetActive(true);
         }
-        if (ID == 1)
+        if (ID == 2)
         {
             _Clickable3.SetActive(true);
         }
-        if(ID == 1)
+        if(ID == 3)
         {
             _Clickable4.SetActive(true);
         }
-        if(ID == 1)
+        if(ID == 4)
         {
             _Clickable5.SetActive(true);
         }
-        if(ID == 1)
+        if(ID == 5)
         {
             _Clickable6.SetActive(true);
         }
-        if (ID == 1)
+        if (ID == 6)
         {
             _Clickable7.SetActive(true);
         }
@@ -228,23 +228,26 @@ public class TimeManager : MonoBehaviour
 
     private void TimeRebirtCount()
     {
-        if(Math.Round(CurrentTimeCount) >100 && CurrentTimePerSecond > 1)
+        if(Math.Round(CurrentTimeCount) > 100)
         {
-            rebirthBuffer = Math.Round(CurrentTimeCount/(100*(1+(rebirthMultiplier*0.1)))); 
+            rebirthBuffer = Math.Floor(CurrentTimeCount/100); 
             _TimeRebirtBufferTXT.text = "Waiting Singularities :" + rebirthBuffer.ToString();
             _RebirthButton.SetActive(true);
             _TimeRebirtBufferTXT.enabled = true;
             _TimeRebirthTXT.enabled = true;
-            _TimeRebirthTXT.text = rebirthMultiplier.ToString() + " Singularities";
+            _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
         }
     }
 
     public void TimeRebirthValidate()
     {
+        audioman.PlaySound(17);
         rebirthTimeBefore += CurrentTimePerSecond;
-        rebirthMultiplier += rebirthBuffer;
+        singularities += rebirthBuffer;
         rebirthBuffer = 0;
-        CurrentTimeCount = 0; 
+        CurrentTimeCount = 0;
+        CurrentTimePerSecond = 0;
+        TimePerClickUpgrade = 0;
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
         _Clickable2.SetActive(false);
@@ -252,8 +255,10 @@ public class TimeManager : MonoBehaviour
         _Clickable4.SetActive(false);
         _Clickable5.SetActive(false);
         _Clickable6.SetActive(false);
-        _Clickable7.SetActive(false);
-        _TimeRebirthTXT.text = rebirthMultiplier.ToString() + " Singularities";
+        _Clickable7.SetActive(false); 
+        _RebirthButton.SetActive(false);
+        _TimeRebirtBufferTXT.text = "Waiting Singularities : 0";
+        _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
     }
 
 
@@ -265,7 +270,6 @@ public class TimeManager : MonoBehaviour
 
         if (_counter >= 0.1)
         {
-            audioman.PlaySound(17);
             SimpleTimeIncrease(CurrentTimePerSecond/10);
 
             _counter = 0;
