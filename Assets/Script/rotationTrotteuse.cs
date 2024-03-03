@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +40,7 @@ public class rotationTrotteuse : MonoBehaviour
                 {
                     audioman.PlaySound(8);
                     TimeManager.instance.CurrentTimeCount = clickCount*TimeManager.instance.CurrentTimePerSecond/10;
-                    TimeManager.instance.TimeMultipler *= 0.1;
+                    TimeManager.instance.TimeMultipler *= Math.Pow(1.04,1+Math.Log10(Math.Max(1,TimeManager.instance.singularities)));
                     isFunctionActive = false;
                 }
                 else

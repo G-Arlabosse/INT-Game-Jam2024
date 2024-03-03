@@ -2142,6 +2142,7 @@ MonoBehaviour:
   _RebirthButton: {fileID: 1328704321}
   audiomanager: {fileID: 277231065}
   TimerDuration: 1
+  singularities: 0
 --- !u!114 &537929998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2601,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 764cd98d11eed5a428a6f4b50b2cd331, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7077d4bc590aa444ca2148ee4866107e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
