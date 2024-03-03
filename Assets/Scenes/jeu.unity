@@ -2142,6 +2142,7 @@ MonoBehaviour:
   _RebirthButton: {fileID: 1328704321}
   audiomanager: {fileID: 277231065}
   TimerDuration: 1
+  singularities: 0
 --- !u!114 &537929998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4726,7 +4727,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1328704324}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 537929997}
+        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
+        m_MethodName: TimeRebirthValidate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1328704324
 MonoBehaviour:
   m_ObjectHideFlags: 0
