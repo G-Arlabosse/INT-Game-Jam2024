@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374021bcf9cb308409dfef6042f66bac, type: 3}
   m_Name: Time Per Seoncds 2
   m_EditorClassIdentifier: 
-  UpgradeAmount: 500
-  OriginalUpgradeCost: 85000
-  CurrentUpgradeCost: 85000
+  UpgradeAmount: 200
+  OriginalUpgradeCost: 75000
+  CurrentUpgradeCost: 75000
   CostIncreaseMultiplierPerPurchase: 0.13
   UpgradeButtonText: 500 TPS
   UpgradeButtonDescription: Increase your Tachyons Per Second by {0} and unlock the
