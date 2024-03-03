@@ -252,11 +252,16 @@ public class TimeManager : MonoBehaviour
         TimePerClickUpgrade = 0;
         TimeMultipler = 1;
 
+        _initializeUpgrade = GetComponent<InitialazeUpgrades>();
+        // Reset prices of upgrades and upgrade text
+        for (int i = 0; i < TimeUpgrades.Length; i++)
+        {
+            TimeUpgrades[i].CurrentUpgradeCost = TimeUpgrades[i].OriginalUpgradeCost; // Reset cost
+        }
 
 
 
-        // Initialize upgrades again
-        _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
+
 
         _Clickable2.SetActive(false);
         _Clickable3.SetActive(false);
