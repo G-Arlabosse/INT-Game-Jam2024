@@ -58,7 +58,7 @@ public class TimeManager : MonoBehaviour
     public float TimerDuration = 1f;
     private double _counter;
 
-    private double singularities;
+    public double singularities;
     private double rebirthBuffer;
     private double rebirthTimeBefore;
 
