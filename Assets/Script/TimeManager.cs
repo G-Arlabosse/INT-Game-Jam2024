@@ -265,6 +265,7 @@ public class TimeManager : MonoBehaviour
 
         if (_counter >= 0.1)
         {
+            audioman.PlaySound(17);
             SimpleTimeIncrease(CurrentTimePerSecond/10);
 
             _counter = 0;
