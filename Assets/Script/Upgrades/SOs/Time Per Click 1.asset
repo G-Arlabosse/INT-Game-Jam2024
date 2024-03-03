@@ -18,5 +18,5 @@ MonoBehaviour:
   CostIncreaseMultiplierPerPurchase: 0.2
   UpgradeButtonText: 1 TPC
   UpgradeButtonDescription: Increase your Tachyons per click by {0}
-  UpgradeImage: {fileID: 21300000, guid: bb7302d6550600d4eb06e47300242b37, type: 3}
+  UpgradeImage: {fileID: 381315645, guid: ba471ef2085d10e4cacf7557adf89e68, type: 3}
   UpgradeID: 0

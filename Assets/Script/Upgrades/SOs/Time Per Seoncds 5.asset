@@ -17,6 +17,7 @@ MonoBehaviour:
   CurrentUpgradeCost: 999999999999
   CostIncreaseMultiplierPerPurchase: 0.13
   UpgradeButtonText: 1,000,000 TPS
-  UpgradeButtonDescription: Increase your Time Per Second by {0}
-  UpgradeImage: {fileID: 0}
+  UpgradeButtonDescription: Increase your Tachyons Per Second by {0} and unlock the
+    clickable Atomic Clock
+  UpgradeImage: {fileID: 21300000, guid: aebcd505b65ae064aa05ab1b15be618d, type: 3}
   UpgradeID: 6
