@@ -18,9 +18,9 @@ public class rotationTrotteuse : MonoBehaviour
     {
         audioman = audiomanager.GetComponent<AudioManager>();
         trotteuse.rectTransform.Rotate(Vector3.forward, -6f);
-        if(isFunctionActive == true)
+        audioman.PlaySound(7);
+        if (isFunctionActive == true)
         {
-            audioman.PlaySound(7);
             clickCount += 1;
         }
     }
