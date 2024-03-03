@@ -135,7 +135,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount += (1+ TimePerClickUpgrade);
+        CurrentTimeCount += (1+ TimePerClickUpgrade) * TimeMultipler;
         UpdateTimeUI();
     }
     #endregion
@@ -230,14 +230,14 @@ public class TimeManager : MonoBehaviour
 
     private void TimeRebirtCount()
     {
-        if(Math.Round(CurrentTimeCount) > 100)
+        if(Math.Round(CurrentTimeCount) > 1000)
         {
-            rebirthBuffer = Math.Floor(CurrentTimeCount/100); 
+            rebirthBuffer = Math.Floor(CurrentTimeCount/1000); 
             _TimeRebirtBufferTXT.text = "Waiting Singularities :" + rebirthBuffer.ToString();
             _RebirthButton.SetActive(true);
             _TimeRebirtBufferTXT.enabled = true;
             _TimeRebirthTXT.enabled = true;
-            _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
+            _TimeRebirthTXT.text = singularities.ToString() + " Singularities -> Multipliers ^ " + Math.Round(1 + Math.Log10(Math.Max(1, singularities)),2).ToString() +"\nBase multiplier * " + Math.Round(2 + Math.Log10(Math.Max(1, singularities)),2).ToString();
         }
     }
 
@@ -250,7 +250,7 @@ public class TimeManager : MonoBehaviour
         CurrentTimeCount = 0;
         CurrentTimePerSecond = 0;
         TimePerClickUpgrade = 0;
-        TimeMultipler = 1;
+        TimeMultipler = (2 + Math.Log10(Math.Max(1, singularities)));
 
 
 
@@ -267,7 +267,7 @@ public class TimeManager : MonoBehaviour
         _RebirthButton.SetActive(false);
         _TimeCountperSECText.text = Math.Round(CurrentTimePerSecond, 1).ToString() + " Tachyons/s";
         _TimeRebirtBufferTXT.text = "Waiting Singularities : 0";
-        _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
+        _TimeRebirthTXT.text = singularities.ToString() + " Singularities -> Multipliers ^ " + Math.Round(1 + Math.Log10(Math.Max(1, singularities)), 2).ToString() + "\nBase multiplier * " + Math.Round(2 + Math.Log10(Math.Max(1, singularities)), 2).ToString();
     }
 
 
