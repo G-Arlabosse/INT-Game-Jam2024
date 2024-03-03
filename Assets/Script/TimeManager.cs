@@ -255,9 +255,7 @@ public class TimeManager : MonoBehaviour
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         for (int i = 0; i < TimeUpgrades.Length; i++)
         {
-            UnityEngine.Debug.Log("Original Upgrade Cost for Upgrade " + i + ": " + TimeUpgrades[i].OriginalUpgradeCost);
             TimeUpgrades[i].CurrentUpgradeCost = TimeUpgrades[i].OriginalUpgradeCost;
-            UnityEngine.Debug.Log("Reset Upgrade Cost for Upgrade " + i + ": " + TimeUpgrades[i].CurrentUpgradeCost);
         }
 
         // Initialize upgrades again
