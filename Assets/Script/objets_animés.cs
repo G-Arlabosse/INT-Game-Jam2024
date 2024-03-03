@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class objets_animés : MonoBehaviour
 {
-    public Sprite Objet;
     public int i = 0;
     public Texture2D text;
     public Image sp;
     public Sprite[] sprites;
+
+    [SerializeField] GameObject audiomanager;
+    private AudioManager audioman;
 
     public void Start()
     {
@@ -18,8 +20,8 @@ public class objets_animés : MonoBehaviour
         sprites = Resources.LoadAll<Sprite>(text.name);
         sp.sprite = sprites[0];
 
+        audioman = audiomanager.GetComponent<AudioManager>();
 
-        
     }
 
     private void OnMouseDown()
@@ -27,6 +29,7 @@ public class objets_animés : MonoBehaviour
 
         i = i++ % (sprites.Length);
         sp.sprite = sprites[i];
+
       
     }
 
@@ -35,25 +38,49 @@ public class objets_animés : MonoBehaviour
     {
         i = (i + 1) % sprites.Length;
         sp.sprite = sprites[i];
-        if (i % 6 == 0 && sprites.Length == 6)
+        print(sp.sprite);
+        print(sprites[i]);
+        print(i);
+        if (sprites.Length == 6)
         {
-            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 2;
-            TimeManager.instance.TimeMultipler *= 1.005;
+            audioman.PlaySound(5);
+            if (i % 6 == 0)
+            {
+                audioman.PlaySound(6);
+                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 2;
+                TimeManager.instance.TimeMultipler *= 1.005;
+            }
         }
-        if (i % 18 == 0 && sprites.Length == 18)
+        if (sprites.Length == 18)
         {
-            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 6;
-            TimeManager.instance.TimeMultipler *= 1.01;
+            audioman.PlaySound(9);
+            if (i % 18 == 0)
+            {
+                audioman.PlaySound(10);
+                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 6;
+                TimeManager.instance.TimeMultipler *= 1.01;
+            }
+
         }
-        if (i % 35 == 0 && sprites.Length == 35)
+        if (sprites.Length == 35)
         {
-            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
-            TimeManager.instance.TimeMultipler *= 1.02;
+            audioman.PlaySound(15);
+            if (i % 35 == 0)
+            {
+                audioman.PlaySound(16);
+                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
+                TimeManager.instance.TimeMultipler *= 1.02;
+            }
         }
-        if (i % 11 == 0 && sprites.Length == 11)
+        if (sprites.Length == 11)
         {
-            TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
-            TimeManager.instance.TimeMultipler *= 1.05;
+            audioman.PlaySound(3);
+            if (i % 11 == 0)
+            {
+                audioman.PlaySound(4);
+                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
+                TimeManager.instance.TimeMultipler *= 1.05;
+            }
         }
     }
 
