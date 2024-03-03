@@ -71,7 +71,7 @@ public class TimeManager : MonoBehaviour
             instance = this;
             TimeMultipler = 1;
         }
-
+        CurrentTimeCount = 100000000;
         UpdateTimeUI();
         UpdateTimePerSecondUI();
         UpdateTimeMultiplierUI();
