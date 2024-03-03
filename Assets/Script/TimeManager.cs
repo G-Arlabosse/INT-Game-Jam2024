@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class TimeManager : MonoBehaviour
 {
@@ -50,7 +51,9 @@ public class TimeManager : MonoBehaviour
 
     private InitialazeUpgrades _initializeUpgrade;
 
-    
+    public float TimerDuration = 1f;
+    private double _counter;
+
     private double rebirthMultiplier;
     private double rebirthBuffer;
     private double rebirthTimeBefore;
@@ -247,4 +250,16 @@ public class TimeManager : MonoBehaviour
 
 
     #endregion
+
+    public void Update()
+    {
+        _counter += Time.deltaTime;
+
+        if (_counter >= 0.1)
+        {
+            SimpleTimeIncrease(CurrentTimePerSecond/10);
+
+            _counter = 0;
+        }
+    }
 }
