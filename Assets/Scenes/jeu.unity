@@ -1229,6 +1229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horloge
       objectReference: {fileID: 0}
+    - target: {fileID: 7479686881833906620, guid: bdaf9fc599ca9f340970b53128b654a5, type: 3}
+      propertyPath: audiomanager
+      value: 
+      objectReference: {fileID: 277231065}
     - target: {fileID: 8636654475774881378, guid: bdaf9fc599ca9f340970b53128b654a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2327,6 +2331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 101282184}
     m_Modifications:
+    - target: {fileID: 258723635626222213, guid: d4f64209e8ae8b942bf501f473ab5c69, type: 3}
+      propertyPath: audiomanager
+      value: 
+      objectReference: {fileID: 277231065}
     - target: {fileID: 921930243569154576, guid: d4f64209e8ae8b942bf501f473ab5c69, type: 3}
       propertyPath: m_Name
       value: Chronometre
