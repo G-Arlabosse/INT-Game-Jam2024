@@ -17,6 +17,7 @@ public class InitialazeUpgrades : MonoBehaviour
             upgrades[currentIndex].CurrentUpgradeCost = upgrades[currentIndex].OriginalUpgradeCost;
 
             //set text
+            Debug.Log(upgrades[currentIndex].CurrentUpgradeCost);
             UpgradeButtonReferences buttonRef = go.GetComponent<UpgradeButtonReferences>();
             buttonRef.UpgradeButtonText.text = upgrades[currentIndex].UpgradeButtonText;
             buttonRef.UpgradeButtonDescription.SetText(upgrades[currentIndex].UpgradeButtonDescription, upgrades[currentIndex].UpgradeAmount);
