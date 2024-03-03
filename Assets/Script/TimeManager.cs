@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -248,8 +249,20 @@ public class TimeManager : MonoBehaviour
         CurrentTimeCount = 0;
         CurrentTimePerSecond = 0;
         TimePerClickUpgrade = 0;
+        TimeMultipler = 1;
+
+        //reset upgrades price
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
+        for (int i = 0; i < TimeUpgrades.Length; i++)
+        {
+            UnityEngine.Debug.Log("Original Upgrade Cost for Upgrade " + i + ": " + TimeUpgrades[i].OriginalUpgradeCost);
+            TimeUpgrades[i].CurrentUpgradeCost = TimeUpgrades[i].OriginalUpgradeCost;
+            UnityEngine.Debug.Log("Reset Upgrade Cost for Upgrade " + i + ": " + TimeUpgrades[i].CurrentUpgradeCost);
+        }
+
+        // Initialize upgrades again
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
+
         _Clickable2.SetActive(false);
         _Clickable3.SetActive(false);
         _Clickable4.SetActive(false);
@@ -257,6 +270,7 @@ public class TimeManager : MonoBehaviour
         _Clickable6.SetActive(false);
         _Clickable7.SetActive(false); 
         _RebirthButton.SetActive(false);
+        _TimeCountperSECText.text = Math.Round(CurrentTimePerSecond, 1).ToString() + " Tachyons/s";
         _TimeRebirtBufferTXT.text = "Waiting Singularities : 0";
         _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
     }

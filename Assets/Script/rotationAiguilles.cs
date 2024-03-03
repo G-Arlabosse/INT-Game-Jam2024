@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,14 +36,14 @@ public class rotationAiguilles : MonoBehaviour
         {
             audioman.PlaySound(13);
             TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
-            TimeManager.instance.TimeMultipler *= 1.05;
+            TimeManager.instance.TimeMultipler *= Math.Pow(1.018, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
 
         }
         if (i % 720 == 0)
         {
             audioman.PlaySound(14);
             TimeManager.instance.CurrentTimePerSecond = TimeManager.instance.CurrentTimePerSecond * 1.2;
-            TimeManager.instance.TimeMultipler *= 1.4;
+            TimeManager.instance.TimeMultipler *= Math.Pow(1.3, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
         }
     }
 }

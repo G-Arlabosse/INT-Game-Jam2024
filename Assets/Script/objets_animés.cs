@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System;
 using UnityEngine;
 using UnityEngine.UI; 
 
@@ -48,7 +49,7 @@ public class objets_animés : MonoBehaviour
             {
                 audioman.PlaySound(6);
                 TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 2;
-                TimeManager.instance.TimeMultipler *= 1.005;
+                TimeManager.instance.TimeMultipler *= Math.Pow(1.001, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
             }
         }
         if (sprites.Length == 18)
@@ -58,7 +59,7 @@ public class objets_animés : MonoBehaviour
             {
                 audioman.PlaySound(10);
                 TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 6;
-                TimeManager.instance.TimeMultipler *= 1.01;
+                TimeManager.instance.TimeMultipler *= Math.Pow(1.004, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
             }
 
         }
@@ -69,7 +70,7 @@ public class objets_animés : MonoBehaviour
             {
                 audioman.PlaySound(16);
                 TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
-                TimeManager.instance.TimeMultipler *= 1.02;
+                TimeManager.instance.TimeMultipler *= Math.Pow(1.01, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
             }
         }
         if (sprites.Length == 11)
@@ -78,8 +79,8 @@ public class objets_animés : MonoBehaviour
             if (i % 11 == 0)
             {
                 audioman.PlaySound(4);
-                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 15;
-                TimeManager.instance.TimeMultipler *= 1.05;
+                TimeManager.instance.CurrentTimeCount += TimeManager.instance.CurrentTimePerSecond * 7;
+                TimeManager.instance.TimeMultipler *= Math.Pow(1.007, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
             }
         }
     }
