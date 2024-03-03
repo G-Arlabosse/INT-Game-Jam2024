@@ -12,8 +12,7 @@ public class TimeUpgradePerSeconds : TimeUpgrade
         //go.GetComponent<TimePerSecondsTimer>().TimePerSeconds = UpgradeAmount;
 
         TimeManager.instance.SimpleCookiePerSecondIncrease(UpgradeAmount);
-
-        //TimeManager.instance.Apparition(UpgradeID);
+        TimeManager.instance.Apparition(UpgradeID);
         //Debug.Log(UpgradeID);
     }
 
