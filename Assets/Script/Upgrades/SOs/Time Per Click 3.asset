@@ -17,6 +17,6 @@ MonoBehaviour:
   CurrentUpgradeCost: 75000
   CostIncreaseMultiplierPerPurchase: 0.2
   UpgradeButtonText: 500 TPC
-  UpgradeButtonDescription: Increase your time per click by {0}
+  UpgradeButtonDescription: Increase your Tachyons per click by {0}
   UpgradeImage: {fileID: 0}
   UpgradeID: 0
