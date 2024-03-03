@@ -35,11 +35,11 @@ public class rotationTrotteuse : MonoBehaviour
             }
             else
             {
-                if(clickCount > 500)
+                if(clickCount > 200)
                 {
                     audioman.PlaySound(8);
                     TimeManager.instance.CurrentTimeCount = clickCount*TimeManager.instance.CurrentTimePerSecond/10;
-                    TimeManager.instance.TimeMultipler += 0.1;
+                    TimeManager.instance.TimeMultipler *= 0.1;
                     isFunctionActive = false;
                 }
                 else
