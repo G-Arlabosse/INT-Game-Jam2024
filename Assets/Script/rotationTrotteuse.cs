@@ -26,31 +26,17 @@ public class rotationTrotteuse : MonoBehaviour
         }
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (isFunctionActive == true) {
             timer += Time.deltaTime ;
             if(timer > 60f)
             {
-                isFunctionActive = false ;
-            }
-            else
-            {
-                if(clickCount > 200)
-                {
-                    audioman.PlaySound(8);
-                    TimeManager.instance.CurrentTimeCount = clickCount*TimeManager.instance.CurrentTimePerSecond/10;
-                    TimeManager.instance.TimeMultipler *= Math.Pow(1.04,1+Math.Log10(Math.Max(1,TimeManager.instance.singularities)));
-                    isFunctionActive = false;
-                }
-                else
-                {
-                   isFunctionActive = false;
-                }
-            }
-            if(timer > 180f)
-            {
-                isFunctionActive = true ;
+                isFunctionActive = false;
+                audioman.PlaySound(8);
+                TimeManager.instance.CurrentTimeCount += clickCount * TimeManager.instance.CurrentTimePerSecond / 2;
+                TimeManager.instance.TimeMultipler *= Math.Pow(1.04, 1 + Math.Log10(Math.Max(1, TimeManager.instance.singularities)));
+                isFunctionActive = false;
             }
         }
     }

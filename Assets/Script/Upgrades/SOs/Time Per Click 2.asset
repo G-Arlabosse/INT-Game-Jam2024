@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Time Per Click 2
   m_EditorClassIdentifier: 
   UpgradeAmount: 10
-  OriginalUpgradeCost: 1500
-  CurrentUpgradeCost: 1500
+  OriginalUpgradeCost: 2000
+  CurrentUpgradeCost: 3456
   CostIncreaseMultiplierPerPurchase: 0.2
   UpgradeButtonText: 10 TPC
   UpgradeButtonDescription: Increase your Tachyons per click by {0}

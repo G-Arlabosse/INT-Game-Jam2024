@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93cd0ffe02ad34459326ed47cb5d7dc, type: 3}
   m_Name: Time Per Click 4
   m_EditorClassIdentifier: 
-  UpgradeAmount: 2500
+  UpgradeAmount: 400
   OriginalUpgradeCost: 150000
   CurrentUpgradeCost: 150000
   CostIncreaseMultiplierPerPurchase: 0.2
