@@ -248,6 +248,7 @@ public class TimeManager : MonoBehaviour
         CurrentTimeCount = 0;
         CurrentTimePerSecond = 0;
         TimePerClickUpgrade = 0;
+        TimeMultipler = 1;
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
         _Clickable2.SetActive(false);
@@ -257,6 +258,7 @@ public class TimeManager : MonoBehaviour
         _Clickable6.SetActive(false);
         _Clickable7.SetActive(false); 
         _RebirthButton.SetActive(false);
+        _TimeCountperSECText.text = Math.Round(CurrentTimePerSecond, 1).ToString() + " Tachyons/s";
         _TimeRebirtBufferTXT.text = "Waiting Singularities : 0";
         _TimeRebirthTXT.text = singularities.ToString() + " Singularities";
     }
