@@ -8,13 +8,13 @@ public class TimeUpgradePerSeconds : TimeUpgrade
 
     public override void ApplyUpgrade()
     {
-        GameObject go = Instantiate(TimeManager.instance.TimePerSecondObjToSpawn, Vector3.zero, Quaternion.identity);
-        go.GetComponent<TimePerSecondsTimer>().TimePerSeconds = UpgradeAmount;
+        //GameObject go = Instantiate(TimeManager.instance.TimePerSecondObjToSpawn, Vector3.zero, Quaternion.identity);
+        //go.GetComponent<TimePerSecondsTimer>().TimePerSeconds = UpgradeAmount;
 
         TimeManager.instance.SimpleCookiePerSecondIncrease(UpgradeAmount);
 
-        TimeManager.instance.Apparition(UpgradeID);
-        Debug.Log(UpgradeID);
+        //TimeManager.instance.Apparition(UpgradeID);
+        //Debug.Log(UpgradeID);
     }
 
 }

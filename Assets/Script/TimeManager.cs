@@ -166,7 +166,7 @@ public class TimeManager : MonoBehaviour
 
     public void SimpleCookiePerSecondIncrease(double amount)
     {
-        CurrentTimePerSecond += amount * TimeMultipler * (1 + rebirthMultiplier * 2) ;
+        CurrentTimePerSecond += amount ;
         UpdateTimePerSecondUI();
     }
 
