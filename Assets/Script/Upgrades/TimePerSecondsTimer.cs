@@ -18,7 +18,7 @@ public class TimePerSecondsTimer : MonoBehaviour
         if(_counter >= TimerDuration)
         {
             TimeManager.instance.SimpleTimeIncrease(TimePerSeconds);
-
+            
             _counter = 0;
         }
     }

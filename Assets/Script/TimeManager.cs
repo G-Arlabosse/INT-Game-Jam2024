@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _TimeCountText;
     [SerializeField] private TextMeshProUGUI _TimeCountperSECText;
     [SerializeField] private TextMeshProUGUI _TimeMultiplierTXT;
+    [SerializeField] private TextMeshProUGUI _TimeRebirthTXT;
+    [SerializeField] private TextMeshProUGUI _TimeRebirtBufferTXT;
     [SerializeField] private GameObject _TachyonObj;
     public GameObject TachyonTextPopup;
     [SerializeField] private GameObject _backgroundObj;
@@ -33,6 +36,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject _Clickable6;
     [SerializeField] private GameObject _Clickable7;
 
+    [Space]
+    [SerializeField] private GameObject _RebirthButton;
     public double CurrentTimeCount { get; set; }
 
     public double CurrentTimePerSecond { get; set; }
@@ -44,6 +49,11 @@ public class TimeManager : MonoBehaviour
     public double TimePerClickUpgrade { get; set; }
 
     private InitialazeUpgrades _initializeUpgrade;
+
+    
+    private double rebirthMultiplier;
+    private double rebirthBuffer;
+    private double rebirthTimeBefore;
 
     private void Awake()
     {
@@ -60,6 +70,14 @@ public class TimeManager : MonoBehaviour
         _upgradeCanvas.SetActive(false);
         MainGameCanvas.SetActive(true);
         _Clickable2.SetActive(false);
+        _Clickable3.SetActive(false);
+        _Clickable4.SetActive(false);
+        _Clickable5.SetActive(false);
+        _Clickable6.SetActive(false);
+        _Clickable7.SetActive(false);
+        _RebirthButton.SetActive(false);
+        _TimeRebirtBufferTXT.enabled = false;
+        _TimeRebirthTXT.enabled = false;
 
         _initializeUpgrade = GetComponent<InitialazeUpgrades>();
         _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
@@ -71,6 +89,7 @@ public class TimeManager : MonoBehaviour
     {
         _TimeCountText.text = Math.Round(CurrentTimeCount).ToString() +" Tachyons";
         UpdateTimeMultiplierUI();
+        TimeRebirtCount();
     }
 
     private void UpdateTimePerSecondUI()
@@ -106,7 +125,7 @@ public class TimeManager : MonoBehaviour
     }
     public void IncreaseTime()
     {
-        CurrentTimeCount += (1+ TimePerClickUpgrade)*TimeMultipler;
+        CurrentTimeCount += (1+ TimePerClickUpgrade);
         UpdateTimeUI();
     }
     #endregion
@@ -131,13 +150,13 @@ public class TimeManager : MonoBehaviour
 
     public void SimpleTimeIncrease(double amount)
     {
-        CurrentTimeCount += amount*TimeMultipler;
+        CurrentTimeCount += amount*TimeMultipler*(1+rebirthMultiplier*2);
         UpdateTimeUI();
     }
 
     public void SimpleCookiePerSecondIncrease(double amount)
     {
-        CurrentTimePerSecond += amount * TimeMultipler;
+        CurrentTimePerSecond += amount * TimeMultipler * (1 + rebirthMultiplier * 2) ;
         UpdateTimePerSecondUI();
     }
 
@@ -191,6 +210,41 @@ public class TimeManager : MonoBehaviour
             _Clickable7.SetActive(true);
         }
     }
+
+    #endregion
+
+    #region Rebirt System
+
+    private void TimeRebirtCount()
+    {
+        if(Math.Round(CurrentTimeCount) >100 && CurrentTimePerSecond > 1)
+        {
+            rebirthBuffer = Math.Round(CurrentTimeCount/(100*(1+(rebirthMultiplier*0.1)))); 
+            _TimeRebirtBufferTXT.text = "Waiting Singularities :" + rebirthBuffer.ToString();
+            _RebirthButton.SetActive(true);
+            _TimeRebirtBufferTXT.enabled = true;
+            _TimeRebirthTXT.enabled = true;
+            _TimeRebirthTXT.text = rebirthMultiplier.ToString() + " Singularities";
+        }
+    }
+
+    public void TimeRebirthValidate()
+    {
+        rebirthTimeBefore += CurrentTimePerSecond;
+        rebirthMultiplier += rebirthBuffer;
+        rebirthBuffer = 0;
+        CurrentTimeCount = 0; 
+        _initializeUpgrade = GetComponent<InitialazeUpgrades>();
+        _initializeUpgrade.Initialaze(TimeUpgrades, _upgradeUIToSpawn, _upgradeUIParent);
+        _Clickable2.SetActive(false);
+        _Clickable3.SetActive(false);
+        _Clickable4.SetActive(false);
+        _Clickable5.SetActive(false);
+        _Clickable6.SetActive(false);
+        _Clickable7.SetActive(false);
+        _TimeRebirthTXT.text = rebirthMultiplier.ToString() + " Singularities";
+    }
+
 
     #endregion
 }
