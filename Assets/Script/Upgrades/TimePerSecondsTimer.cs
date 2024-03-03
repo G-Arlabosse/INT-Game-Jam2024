@@ -13,6 +13,7 @@ public class TimePerSecondsTimer : MonoBehaviour
 
     private void Update()
     {
+        /*
         _counter += Time.deltaTime;
         
         if(_counter >= TimerDuration)
@@ -21,5 +22,6 @@ public class TimePerSecondsTimer : MonoBehaviour
             
             _counter = 0;
         }
+        */
     }
 }
